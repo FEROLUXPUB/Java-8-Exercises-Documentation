@@ -1,0 +1,48 @@
+package Practice10;
+
+@FunctionalInterface
+interface CheckedFunction<T, R> {
+	R apply(T t) throws Exception;
+	
+
+}
+
+package Practice10;
+
+import java.util.Optional;
+import java.util.function.Function;
+
+public class CheckedFunctionWrapper {
+    public static <T, R> Function<T, Optional<R>> wrap(CheckedFunction<T, R> function) {
+        return t -> {
+            try {
+                return Optional.ofNullable(function.apply(t));
+            } catch (Exception e) {
+                // Log or handle exception if needed
+                return Optional.empty();
+            }
+        };
+    }
+}
+
+
+package Practice10;
+
+import java.util.Optional;
+import java.util.function.Function;
+
+public class main {
+    public static void main(String[] args) {
+        
+        CheckedFunction<String, Integer> parseInt = s -> Integer.parseInt(s);
+
+        
+        Function<String, Optional<Integer>> safeParse = CheckedFunctionWrapper.wrap(parseInt);
+
+       
+        System.out.println(safeParse.apply("5566"));    
+        System.out.println(safeParse.apply("Abcd"));    
+    }
+}
+
+
