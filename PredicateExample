@@ -1,0 +1,17 @@
+package Practice6;
+
+import java.util.function.Predicate;
+import java.util.function.Predicate.*;
+
+public class PredicateExample {
+	public static void main(String []args) {
+		Predicate<String> isLengthGreaterThanFive = str-> str.length() > 5;
+		
+		String test1 = "Hello";
+		String test2 = "Welcome";
+		
+		System.out.println(test1 + "> 5? " +isLengthGreaterThanFive.test(test1));
+		System.out.println(test2 + "> 5? " +isLengthGreaterThanFive.test(test2));
+	}
+
+}
