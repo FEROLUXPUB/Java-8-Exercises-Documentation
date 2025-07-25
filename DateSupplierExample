@@ -1,0 +1,15 @@
+package Practice7;
+
+import java.time.LocalDate;
+import java.util.function.Supplier;
+
+public class DateSupplierExample {
+	public static void main(String[]args) {
+		Supplier<LocalDate> currentDateSupplier = () -> LocalDate.now();
+		
+		LocalDate today = currentDateSupplier.get();
+		System.out.println("Today is date: " + today);
+		
+	}
+
+}
