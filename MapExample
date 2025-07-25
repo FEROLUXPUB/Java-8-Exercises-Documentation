@@ -1,0 +1,21 @@
+package practice4;
+
+import java.util.*;
+
+public class FilterMapExample {
+	public static void main(String[]args) {
+		Map<String, Integer> data = new HashMap<>();
+		data.put("Mango", 5);
+		data.put("Apple", 12);
+		data.put("Banana", 8);
+		data.put("Grapes", 15);
+		
+		data.forEach((key, value)->{
+			if(value > 10) {
+				System.out.println(key + ": " + value);
+			}
+		});
+		
+	}
+
+}
