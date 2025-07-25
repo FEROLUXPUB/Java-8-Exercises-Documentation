@@ -1,0 +1,17 @@
+package practice5;
+
+public class TriFunctionExample {
+	public static void main(String[] args) {
+		TriFunction<String, String, String, String> concatThree = 
+				(s1,s2,s3) -> s1 + s2 + s3;
+				
+				String result = concatThree.apply("Hello, ","Fuctional ", "Interface");
+				System.out.println(result);
+	}
+	
+	@FunctionalInterface
+	interface TriFunction<A, B, C, T> {
+	   T apply(A a, B b, C c);
+	}
+
+}
