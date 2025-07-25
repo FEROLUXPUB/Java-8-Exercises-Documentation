@@ -1,0 +1,19 @@
+package Practice14;
+
+import java.util.Optional;
+
+public class OptionalProduct {
+	public static void main(String[]args) {
+		Optional<Integer> a = Optional.of(6);
+		Optional<Integer> b = Optional.of(9);
+		Optional<Integer> product = a.flatMap(x ->
+									b.map(y -> x * y));
+		 
+		product.ifPresentOrElse(
+				result -> System.out.println("Product: " + result),
+				() -> System.out.println("Ome or both values are missing")
+				);
+		
+	}
+
+}
