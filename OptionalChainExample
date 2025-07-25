@@ -1,0 +1,21 @@
+package Practice13;
+
+import java.util.Optional;
+
+public class OptionalChainExample {
+	public static void main(String[]args) {
+		Optional<String> input = Optional.of("null");
+		
+		input.map(String::toUpperCase)
+				.filter(s -> s.length() > 3)
+				.ifPresentOrElse(
+				value -> System.out.println("Value: " + value),
+				() -> System.out.println("No valid value")
+			);		
+	}
+	//If input is "java" → Value: JAVA
+	//If input is "go" → No valid value
+	//If input is null or Optional.empty() → No valid value
+}
+
+
