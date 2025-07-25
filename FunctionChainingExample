@@ -1,0 +1,17 @@
+package Practice8;
+
+import java.util.function.Function;
+
+public class FunctionChainingExample {
+	public static void main(String[]args) {
+		Function<Integer, Integer> square = x -> x * x;
+		Function<Integer, Integer> addTen = x -> x + 10;
+		
+		Function<Integer, Integer> squareThenAddTen = square.andThen(addTen);
+		
+		int result = squareThenAddTen.apply(5);
+		System.out.println("Result: " + result);
+		
+	}
+
+}
