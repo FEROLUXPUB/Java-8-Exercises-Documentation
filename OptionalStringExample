@@ -1,0 +1,17 @@
+package Practice11;
+
+
+import java.util.Optional;
+
+public class OptionalStringExample {
+    public static void main(String[] args) {
+        String input = null; 
+
+       
+        String result = Optional.ofNullable(input)
+        		.map(String::toUpperCase)
+        		.orElse("EMPTY");
+
+        System.out.println(result);  
+    }
+}
