@@ -1,0 +1,11 @@
+package List;
+import java.util.Arrays;
+import java.util.List;
+
+public class UpperCasePrinter {
+	public static void main(String[] args) {
+		List<String> words = Arrays.asList("Hello","My","Name","Java8");
+		words.forEach(word -> System.out.println(word.toUpperCase()));
+	}
+
+}
