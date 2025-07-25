@@ -1,0 +1,32 @@
+package practice3;
+
+import java.util.*;
+import java.util.List;
+
+
+ class Person {
+	 String name;
+	 int age;
+	 
+	 Person(String name, int age){
+		 this.name = name;
+		 this.age = age;
+	 }
+	 public String toString() {
+		 return name + "(" + age +")";
+	 }
+	 public class PersonSorter{
+		 public static void main (String[]args) {
+			 List<Person> people = Arrays.asList
+					 
+					 (
+							 new Person("Gaurav",40),
+							 new Person("Rahul",20),
+							 new Person("Tom",30)
+							 
+							 );
+			 Collections.sort(people, (p1, p2)-> Integer.compare(p1.age, p2.age));
+					 people.forEach(System.out::println);
+		 }
+	 }
+}
