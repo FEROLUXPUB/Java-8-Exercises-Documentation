@@ -1,0 +1,44 @@
+package Practice15;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class OptionalUserFilter {
+	public static void main (String[] args) {
+		List<Optional<User>> optionalUsers = Arrays.asList(
+				Optional.of(new User("Gaurav")),
+				Optional.empty(),
+				Optional.of(new User("Rakesh")),
+				Optional.empty(),
+				Optional.of(new User("Rohit"))
+				);
+		 List<User> users = optionalUsers.stream()
+		            .flatMap(Optional::stream)  
+		            .collect(Collectors.toList());
+
+		        System.out.println(users);
+					
+	}
+
+}
+package Practice15;
+
+import java.util.*;
+import java.util.stream.*;
+
+
+
+ class User {
+	 String name;
+	 User(String name){
+		 this.name  = name;
+		 
+	 }
+	
+	 public String toString() {
+		 return name;
+	 }
+	 
+}
