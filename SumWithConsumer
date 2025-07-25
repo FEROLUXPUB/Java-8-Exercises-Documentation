@@ -1,0 +1,19 @@
+package Practice9;
+
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
+
+public class SumWithConsumer {
+	public static void main(String[]args) {
+		
+		List<Integer> number = Arrays.asList(10, 20, 30, 40);
+		AtomicInteger sum = new AtomicInteger(0);
+		
+		Consumer<Integer> addToSum = num -> sum.addAndGet(num);
+		
+		number.forEach(addToSum);
+		System.out.println("Total Sum:  " + sum.get());
+	}
+
+}
